@@ -30,7 +30,6 @@ extension MeteoListInteractor: MeteoListBusinessLogic {
             guard let self = self else { return }
             switch result {
             case .success(let cityMeteo):
-                print("cityMeto : \(cityMeteo)")
                 self.cityMeteoList.append(cityMeteo)
                 self.prenseter.presentFetchMeteoList(response: FetchMeteoCityList.Response.init(model: self.cityMeteoList))
             case .failure(let error):

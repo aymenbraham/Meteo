@@ -60,7 +60,7 @@ class MeteoListViewController: UIViewController {
     }
     
     @objc func addAction(sender: UIBarButtonItem) {
-        print("tap here")
+        router?.goToAddCity()
     }
 
 }
@@ -82,8 +82,7 @@ extension MeteoListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
+        router?.goToMeteoDetail()
     }
 }
 
