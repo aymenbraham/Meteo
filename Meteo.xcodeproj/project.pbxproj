@@ -17,6 +17,23 @@
 		C306879529F0761B00922FC7 /* MeteoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C306879429F0761B00922FC7 /* MeteoTests.swift */; };
 		C306879F29F0761C00922FC7 /* MeteoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C306879E29F0761C00922FC7 /* MeteoUITests.swift */; };
 		C30687A129F0761C00922FC7 /* MeteoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30687A029F0761C00922FC7 /* MeteoUITestsLaunchTests.swift */; };
+		C3248A7329F13E36002D230A /* MeteoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A7129F13E36002D230A /* MeteoListViewController.swift */; };
+		C3248A7429F13E36002D230A /* MeteoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3248A7229F13E36002D230A /* MeteoListViewController.xib */; };
+		C3248A7829F13E6D002D230A /* MeteoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A7629F13E6D002D230A /* MeteoListTableViewCell.swift */; };
+		C3248A7929F13E6D002D230A /* MeteoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3248A7729F13E6D002D230A /* MeteoListTableViewCell.xib */; };
+		C3248A7B29F13E85002D230A /* MeteoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A7A29F13E85002D230A /* MeteoListInteractor.swift */; };
+		C3248A7D29F13F61002D230A /* MeteoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A7C29F13F61002D230A /* MeteoListPresenter.swift */; };
+		C3248A7F29F13F70002D230A /* MeteoListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A7E29F13F70002D230A /* MeteoListWorker.swift */; };
+		C3248A8129F13F86002D230A /* MeteoListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A8029F13F86002D230A /* MeteoListRouter.swift */; };
+		C3248A8329F13F98002D230A /* MeteoListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A8229F13F98002D230A /* MeteoListScene.swift */; };
+		C3248A8529F141F7002D230A /* MeteoListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A8429F141F7002D230A /* MeteoListBuilder.swift */; };
+		C3248A8929F15E5B002D230A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A8829F15E5B002D230A /* NetworkManager.swift */; };
+		C3248A8B29F15EE3002D230A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A8A29F15EE3002D230A /* Constants.swift */; };
+		C3248A8E29F16732002D230A /* MeteoCityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A8D29F16732002D230A /* MeteoCityAPI.swift */; };
+		C3248A9029F18C0A002D230A /* MeteoListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A8F29F18C0A002D230A /* MeteoListResponse.swift */; };
+		C3248A9229F191C5002D230A /* MeteoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A9129F191C5002D230A /* MeteoListModel.swift */; };
+		C3248A9429F1AF01002D230A /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A9329F1AF01002D230A /* NSAttributedStringExtension.swift */; };
+		C3248A9629F1B459002D230A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3248A9529F1B459002D230A /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +68,23 @@
 		C306879A29F0761C00922FC7 /* MeteoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeteoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C306879E29F0761C00922FC7 /* MeteoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoUITests.swift; sourceTree = "<group>"; };
 		C30687A029F0761C00922FC7 /* MeteoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C3248A7129F13E36002D230A /* MeteoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListViewController.swift; sourceTree = "<group>"; };
+		C3248A7229F13E36002D230A /* MeteoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeteoListViewController.xib; sourceTree = "<group>"; };
+		C3248A7629F13E6D002D230A /* MeteoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListTableViewCell.swift; sourceTree = "<group>"; };
+		C3248A7729F13E6D002D230A /* MeteoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeteoListTableViewCell.xib; sourceTree = "<group>"; };
+		C3248A7A29F13E85002D230A /* MeteoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListInteractor.swift; sourceTree = "<group>"; };
+		C3248A7C29F13F61002D230A /* MeteoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListPresenter.swift; sourceTree = "<group>"; };
+		C3248A7E29F13F70002D230A /* MeteoListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListWorker.swift; sourceTree = "<group>"; };
+		C3248A8029F13F86002D230A /* MeteoListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListRouter.swift; sourceTree = "<group>"; };
+		C3248A8229F13F98002D230A /* MeteoListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListScene.swift; sourceTree = "<group>"; };
+		C3248A8429F141F7002D230A /* MeteoListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListBuilder.swift; sourceTree = "<group>"; };
+		C3248A8829F15E5B002D230A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C3248A8A29F15EE3002D230A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C3248A8D29F16732002D230A /* MeteoCityAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoCityAPI.swift; sourceTree = "<group>"; };
+		C3248A8F29F18C0A002D230A /* MeteoListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListResponse.swift; sourceTree = "<group>"; };
+		C3248A9129F191C5002D230A /* MeteoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListModel.swift; sourceTree = "<group>"; };
+		C3248A9329F1AF01002D230A /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
+		C3248A9529F1B459002D230A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +180,9 @@
 		C30687AE29F0764B00922FC7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C3248A8A29F15EE3002D230A /* Constants.swift */,
+				C3248A9329F1AF01002D230A /* NSAttributedStringExtension.swift */,
+				C3248A9529F1B459002D230A /* Utils.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -153,6 +190,7 @@
 		C30687AF29F0765700922FC7 /* DisplayedBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				C3248A8429F141F7002D230A /* MeteoListBuilder.swift */,
 			);
 			path = DisplayedBuilder;
 			sourceTree = "<group>";
@@ -160,6 +198,8 @@
 		C30687B029F0766300922FC7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C3248A8F29F18C0A002D230A /* MeteoListResponse.swift */,
+				C3248A9129F191C5002D230A /* MeteoListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +207,8 @@
 		C30687B129F0766D00922FC7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				C3248A8829F15E5B002D230A /* NetworkManager.swift */,
+				C3248A8C29F1671F002D230A /* API */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -182,6 +224,7 @@
 		C30687B329F0769800922FC7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C3248A6F29F13E12002D230A /* MeteoList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -192,6 +235,46 @@
 				C306878329F0761900922FC7 /* Meteo.xcdatamodeld */,
 			);
 			path = DataBase;
+			sourceTree = "<group>";
+		};
+		C3248A6F29F13E12002D230A /* MeteoList */ = {
+			isa = PBXGroup;
+			children = (
+				C3248A7029F13E1F002D230A /* View */,
+				C3248A7A29F13E85002D230A /* MeteoListInteractor.swift */,
+				C3248A7C29F13F61002D230A /* MeteoListPresenter.swift */,
+				C3248A7E29F13F70002D230A /* MeteoListWorker.swift */,
+				C3248A8029F13F86002D230A /* MeteoListRouter.swift */,
+				C3248A8229F13F98002D230A /* MeteoListScene.swift */,
+			);
+			path = MeteoList;
+			sourceTree = "<group>";
+		};
+		C3248A7029F13E1F002D230A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C3248A7529F13E45002D230A /* Cells */,
+				C3248A7129F13E36002D230A /* MeteoListViewController.swift */,
+				C3248A7229F13E36002D230A /* MeteoListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C3248A7529F13E45002D230A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C3248A7629F13E6D002D230A /* MeteoListTableViewCell.swift */,
+				C3248A7729F13E6D002D230A /* MeteoListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C3248A8C29F1671F002D230A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C3248A8D29F16732002D230A /* MeteoCityAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +382,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C306878A29F0761B00922FC7 /* LaunchScreen.storyboard in Resources */,
+				C3248A7429F13E36002D230A /* MeteoListViewController.xib in Resources */,
 				C306878729F0761B00922FC7 /* Assets.xcassets in Resources */,
 				C306878229F0761900922FC7 /* Main.storyboard in Resources */,
+				C3248A7929F13E6D002D230A /* MeteoListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,9 +410,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3248A7329F13E36002D230A /* MeteoListViewController.swift in Sources */,
+				C3248A7D29F13F61002D230A /* MeteoListPresenter.swift in Sources */,
+				C3248A7F29F13F70002D230A /* MeteoListWorker.swift in Sources */,
+				C3248A7B29F13E85002D230A /* MeteoListInteractor.swift in Sources */,
+				C3248A8329F13F98002D230A /* MeteoListScene.swift in Sources */,
+				C3248A9029F18C0A002D230A /* MeteoListResponse.swift in Sources */,
+				C3248A8B29F15EE3002D230A /* Constants.swift in Sources */,
 				C306878529F0761900922FC7 /* Meteo.xcdatamodeld in Sources */,
+				C3248A8529F141F7002D230A /* MeteoListBuilder.swift in Sources */,
+				C3248A8129F13F86002D230A /* MeteoListRouter.swift in Sources */,
+				C3248A8E29F16732002D230A /* MeteoCityAPI.swift in Sources */,
+				C3248A9429F1AF01002D230A /* NSAttributedStringExtension.swift in Sources */,
 				C306877F29F0761900922FC7 /* ViewController.swift in Sources */,
+				C3248A8929F15E5B002D230A /* NetworkManager.swift in Sources */,
+				C3248A9629F1B459002D230A /* Utils.swift in Sources */,
 				C306877B29F0761900922FC7 /* AppDelegate.swift in Sources */,
+				C3248A7829F13E6D002D230A /* MeteoListTableViewCell.swift in Sources */,
+				C3248A9229F191C5002D230A /* MeteoListModel.swift in Sources */,
 				C306877D29F0761900922FC7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,9 +612,10 @@
 				INFOPLIST_FILE = Meteo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,9 +641,10 @@
 				INFOPLIST_FILE = Meteo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
