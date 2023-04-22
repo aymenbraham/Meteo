@@ -14,7 +14,7 @@ protocol CityListBuilderProtocol {
 struct CityListBuilder: CityListBuilderProtocol {
     
     func buildCityList(model: [CityProtocol]) -> [DisplayedCityList] {
-        return model.map({ DisplayedCityList(cityName: buildCityName(name: $0.name, countryCode: $0.countryCode)) })
+        return model.map({ DisplayedCityList(cityName: buildCityName(name: $0.name, countryCode: $0.countryCode), model: $0) })
     }
     
     private func buildCityName(name: String, countryCode: String) -> NSAttributedString {

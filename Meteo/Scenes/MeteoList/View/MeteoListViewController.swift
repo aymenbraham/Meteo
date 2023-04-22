@@ -27,7 +27,7 @@ class MeteoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        interactor?.getCityList()
+        interactor?.getCitiesList()
     }
     
     

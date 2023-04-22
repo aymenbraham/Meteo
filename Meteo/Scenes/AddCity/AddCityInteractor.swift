@@ -9,6 +9,7 @@ import Foundation
 
 protocol CityListBusinessLogic {
     func getCityList()
+    func addSelectedCity(model: CityProtocol)
 }
 
 class AddCityInteractor {
@@ -34,5 +35,9 @@ extension AddCityInteractor: CityListBusinessLogic {
                 
             }
         }
+    }
+    
+    func addSelectedCity(model: CityProtocol) {
+        worker.addCity(model: model)
     }
 }

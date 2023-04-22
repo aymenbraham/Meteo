@@ -22,7 +22,8 @@ enum CityListScene {
         let builder = CityListBuilder()
         let presenter = AddCityPresenter(viewController: viewController, builder: builder)
         let cityListApi = CityListAPI(network: NetworkManager())
-        let worker = AddCityWorker(cityListApi: cityListApi)
+        let cityDataStore = CityDataStore(dataStack: CoreDataStack())
+        let worker = AddCityWorker(cityListApi: cityListApi, cityDataStore: cityDataStore)
         let interactor = AddCityInteractor(worker: worker, prenseter: presenter)
         let router = AddCityRouter(viewController: viewController)
         viewController.interactor = interactor

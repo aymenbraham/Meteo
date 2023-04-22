@@ -9,10 +9,12 @@ import UIKit
 
 protocol DisplayedCityListProtocol {
     var cityName: NSAttributedString { get set }
+    var model: CityProtocol { get set }
 }
 
 struct DisplayedCityList: DisplayedCityListProtocol {
     var cityName: NSAttributedString
+    var model: CityProtocol
 }
 
 enum FetchCityList {

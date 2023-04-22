@@ -25,6 +25,7 @@ class AddCityViewController: UIViewController {
     var router: CityListRouting?
     var cityList: [DisplayedCityListProtocol]?
     var filtredCityList: [DisplayedCityListProtocol]?
+    var city: CityProtocol?
     var isSearching = false
     
     override func viewDidLoad() {
@@ -69,8 +70,12 @@ class AddCityViewController: UIViewController {
     }
     
     @objc func addAction(_ sender: UIButton) {
+        guard let city = city else {
+            router?.dismissViewController(fromCanel: false)
+            return
+        }
+        interactor?.addSelectedCity(model: city)
         router?.dismissViewController(fromCanel: false)
-        
     }
     
     @objc func cancelAction(_ sender: UIButton) {
@@ -131,6 +136,7 @@ extension AddCityViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         addButton.isHidden = false
+        city = isSearching ? filtredCityList?[indexPath.row].model : cityList?[indexPath.row].model
     }
 }
 
