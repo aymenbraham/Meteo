@@ -24,9 +24,15 @@ class MeteoListInteractor {
     }
     
     private func fetchCities() {
+        cityMeteoList = []
+        coordinate = []
         worker.fetchAllCity() { result in
             switch result {
             case .success(let city):
+                if city.isEmpty {
+                    self.prenseter.presentNoCityAdded()
+                    return
+                }
                 city.forEach { city in
                     self.coordinate.append(Coordinate(lat: city.lat, lon: city.lng, cityName: city.name))
                 }
@@ -50,7 +56,7 @@ class MeteoListInteractor {
                 var weather = weather
                 weather.cityName = cityName
                 self.cityMeteoList.append(weather)
-                self.prenseter.presentFetchMeteoList(response: FetchWeather.Responseee.init(model: self.cityMeteoList))
+                self.prenseter.presentFetchMeteoList(response: FetchWeather.Response.init(model: self.cityMeteoList))
             case .failure(let error):
                 print(error)
             }

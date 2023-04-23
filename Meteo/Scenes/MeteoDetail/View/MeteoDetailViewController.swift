@@ -35,14 +35,20 @@ class MeteoDetailViewController: UIViewController {
        interactor?.getWeather()
     }
     
-    
-    
     // MARK: SetUp View
     private func setUpView() {
+        setUpGradient()
         startActivityIndicator()
         setUpCurrentlyWeatherView()
         setUpHourlyCollectionView()
         setUpDailyStackView()
+    }
+    
+    private func setUpGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = Constants.Colors.gradientAPP
+        gradientLayer.frame = self.view.bounds
+        self.view.layer.insertSublayer(gradientLayer, at:0)
     }
     
     private func setUpCurrentlyWeatherView() {
@@ -64,7 +70,7 @@ class MeteoDetailViewController: UIViewController {
     }
     
     private func setUpDailyStackView() {
-        dailyStackView.spacing = 8
+        dailyStackView.spacing = 2
         dailyStackView .distribution = .fillEqually
     }
     

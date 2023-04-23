@@ -5,7 +5,7 @@
 //  Created by aymen braham on 20/04/2023.
 //
 
-import Foundation
+import UIKit
 
 class Constants {
     
@@ -17,5 +17,12 @@ class Constants {
         static let meteoListTableViewCell = "MeteoListTableViewCell"
         static let cityListTableViewCell = "CityListTableViewCell"
         static let hourlyCollectionViewCell = "HourlyCollectionViewCell"
+        static let dataNeedsRefresh = Notification.Name("dataNeedsRefresh")
+    }
+    
+    class Colors {
+        static let appUpMainColor = UIColor(red: 135 / 255, green: 206 / 255, blue: 250 / 255, alpha: 1)
+        static let appDownMainColor = UIColor(red: 30 / 255, green: 144 / 255, blue: 255 / 255, alpha: 1)
+        static let gradientAPP = [appUpMainColor.cgColor, appDownMainColor.cgColor]
     }
 }

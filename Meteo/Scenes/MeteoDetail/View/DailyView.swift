@@ -18,7 +18,7 @@ class DailyView: UIView {
     
     func config(viewModel: DisplayedDaily) {
         viewContainer.layer.cornerRadius = 20
-        self.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 70).isActive = true
         dayLabel.attributedText = viewModel.dayTex
         iconImage.image = viewModel.iconImage
         tempMinLabel.attributedText = viewModel.tempMinText

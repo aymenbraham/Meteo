@@ -46,11 +46,11 @@ enum FetchWeather {
     struct Request {}
 
     struct Response {
-        let model: WeatherProtocol
-    }
-
-    struct Responseee {
         let model: [WeatherProtocol]
+    }
+    
+    struct ResponseDetail {
+        let model: WeatherProtocol
     }
     
     struct ViewModel {

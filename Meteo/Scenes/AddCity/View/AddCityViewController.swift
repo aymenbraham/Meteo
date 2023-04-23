@@ -28,9 +28,15 @@ class AddCityViewController: UIViewController {
     var city: CityProtocol?
     var isSearching = false
     
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: Constants.Strings.dataNeedsRefresh, object: nil)
     }
     
     // MARK: SetUp View

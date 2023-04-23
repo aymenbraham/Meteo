@@ -8,7 +8,8 @@
 import Foundation
 
 protocol MeteoListPresentationLogic {
-    func presentFetchMeteoList(response: FetchWeather.Responseee)
+    func presentFetchMeteoList(response: FetchWeather.Response)
+    func presentNoCityAdded()
 }
 
 class MeteoListPresenter: MeteoListPresentationLogic {
@@ -21,8 +22,12 @@ class MeteoListPresenter: MeteoListPresentationLogic {
         self.builder = builder
     }
     
-    func presentFetchMeteoList(response: FetchWeather.Responseee) {
+    func presentFetchMeteoList(response: FetchWeather.Response) {
         let displayedMeteoCityList = builder.buildMeteoCityList(model: response.model)
         viewController?.displayMeteoCityList(viewModel: .init(displayedMeteoCityList: displayedMeteoCityList))
+    }
+    
+    func presentNoCityAdded() {
+        viewController?.displayPopUpAddCity()
     }
 }
