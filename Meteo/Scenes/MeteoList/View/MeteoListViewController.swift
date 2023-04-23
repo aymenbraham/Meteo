@@ -23,7 +23,6 @@ class MeteoListViewController: UIViewController {
     var meteoCityList: [DisplayedMeteoCityListProtocol]?
     
     // MARK: Life Cycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -74,6 +73,7 @@ extension MeteoListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Strings.meteoListTableViewCell, for: indexPath) as! MeteoListTableViewCell
         cell.config(viewModel: meteoCityList?[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -82,7 +82,8 @@ extension MeteoListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        router?.goToMeteoDetail()
+        guard let weather = meteoCityList?[indexPath.row].model else { return }
+        router?.goToMeteoDetail(model: weather)
     }
 }
 

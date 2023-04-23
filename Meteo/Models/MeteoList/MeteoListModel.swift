@@ -15,6 +15,7 @@ protocol DisplayedMeteoCityListProtocol {
     var tempMin: NSAttributedString { get set }
     var tempMax: NSAttributedString { get set }
     var icon: UIImage { get set }
+    var model: WeatherProtocol { get set }
 }
 
 struct DisplayedMeteoCityList: DisplayedMeteoCityListProtocol {
@@ -24,6 +25,7 @@ struct DisplayedMeteoCityList: DisplayedMeteoCityListProtocol {
     var tempMin: NSAttributedString
     var tempMax: NSAttributedString
     var icon: UIImage
+    var model: WeatherProtocol
 }
 
 enum FetchMeteoCityList {

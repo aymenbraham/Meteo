@@ -32,12 +32,11 @@ extension AddCityInteractor: CityListBusinessLogic {
                 self.prenseter.presentFetchCityList(response: FetchCityList.Response.init(model: cityList.response))
             case .failure(let error):
                 print("Error here: \(error)")
-                
             }
         }
     }
     
     func addSelectedCity(model: CityProtocol) {
-        worker.addCity(model: model)
+        let _ = worker.addCity(model: model)
     }
 }

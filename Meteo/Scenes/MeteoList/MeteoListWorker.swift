@@ -8,22 +8,22 @@
 import Foundation
 
 protocol MeteoListWorkerProtocol {
-    func fetchMeteoCity(q: String, completion: @escaping MeteoCityApiProtocol.MeteoCityCompletion)
+    func fetchWeatherCity(lat: Double, lon: Double, completion: @escaping WeatherAPIProtocol.WeatherCompletion)
     func fetchAllCity(completion: @escaping CityDataSourceProtocol.FetchLocalCityCompletion)
 }
 
 struct MeteoListWorker: MeteoListWorkerProtocol {
 
-    private let cityApi: MeteoCityApiProtocol
+    private let weatherApi: WeatherAPIProtocol
     private var cityDataStore: CityDataSourceProtocol
     
-    init(cityApi: MeteoCityApiProtocol, cityDataStore: CityDataSourceProtocol) {
-        self.cityApi = cityApi
+    init(weatherApi: WeatherAPIProtocol, cityDataStore: CityDataSourceProtocol) {
+        self.weatherApi = weatherApi
         self.cityDataStore = cityDataStore
     }
     
-    func fetchMeteoCity(q: String, completion: @escaping MeteoCityApiProtocol.MeteoCityCompletion) {
-        self.cityApi.fetchMeteoCity(q: q, completion: completion)
+    func fetchWeatherCity(lat: Double, lon: Double, completion: @escaping WeatherAPIProtocol.WeatherCompletion) {
+        self.weatherApi.fetchWeather(lat: lat, lon: lon, completion: completion)
     }
     
     func fetchAllCity(completion: @escaping CityDataSourceProtocol.FetchLocalCityCompletion) {

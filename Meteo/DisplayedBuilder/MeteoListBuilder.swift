@@ -8,16 +8,23 @@
 import UIKit
 
 protocol MeteoListBuilderProtocol {
-    func buildMeteoCityList(model: [MeteoCityProtocol]) -> [DisplayedMeteoCityList]
+    func buildMeteoCityList(model: [WeatherProtocol]) -> [DisplayedMeteoCityList]
 }
 
 struct MeteoListBuilder: MeteoListBuilderProtocol {
     
-    func buildMeteoCityList(model: [MeteoCityProtocol]) -> [DisplayedMeteoCityList] {
-        
-        return model.map { DisplayedMeteoCityList(cityName: buildCityName(name: $0.name), descriptionText: buildDescription(description: $0.weather.first?.description ?? ""), temp: buildTemp(temp: $0.main.temp), tempMin: buildTempMinMax(temp: $0.main.tempMin), tempMax: buildTempMinMax(temp: $0.main.tempMax), icon: buildIcon(image: $0.weather.first?.icon ?? "") ?? UIImage()) }
+    func buildMeteoCityList(model: [WeatherProtocol]) -> [DisplayedMeteoCityList] {
+        var displayedMeteoCityList: [DisplayedMeteoCityList] = []
+        let _ = model.map { displayedMeteoCityList.append(DisplayedMeteoCityList(cityName: buildCityName(name: $0.cityName ?? ""),
+                                                                         descriptionText: buildDescription(description: $0.current.weather.first?.description ?? ""),
+                                                                         temp: buildTemp(temp: getTempFor($0.current.temperature)),
+                                                                         tempMin: buildTempMinMax(temp: getTempFor($0.daily.first?.temperature.min ?? 0)),
+                                                                         tempMax: buildTempMinMax(temp: getTempFor($0.daily.first?.temperature.max ?? 0)),
+                                                                         icon: buildIcon(image: $0.current.weather.first?.icon ?? "") ?? UIImage(),
+                                                                         model: $0))}
+        return displayedMeteoCityList
     }
-    
+        
     private func buildCityName(name: String) -> NSAttributedString {
         let nameText = NSMutableAttributedString()
         nameText.append(NSAttributedString.make(string: name,
@@ -34,9 +41,9 @@ struct MeteoListBuilder: MeteoListBuilderProtocol {
         return descriptionText
     }
     
-    private func buildTemp(temp: Double) -> NSAttributedString {
+    private func buildTemp(temp: String) -> NSAttributedString {
         let tempText = NSMutableAttributedString()
-        tempText.append(NSAttributedString.make(string: getTempFor(temp),
+        tempText.append(NSAttributedString.make(string: temp,
                                             font: UIFont.boldSystemFont(ofSize: 22),
                                             color: .black))
         tempText.append(NSAttributedString.make(string: "°",
@@ -45,9 +52,9 @@ struct MeteoListBuilder: MeteoListBuilderProtocol {
         return tempText
     }
     
-    private func buildTempMinMax(temp: Double) -> NSAttributedString {
+    private func buildTempMinMax(temp: String) -> NSAttributedString {
         let nameText = NSMutableAttributedString()
-        nameText.append(NSAttributedString.make(string: getTempFor(temp),
+        nameText.append(NSAttributedString.make(string: temp,
                                             font:UIFont.systemFont(ofSize: 10, weight: .semibold),
                                             color: .black))
         nameText.append(NSAttributedString.make(string: "°",
@@ -61,7 +68,11 @@ struct MeteoListBuilder: MeteoListBuilderProtocol {
         return UIImage(named: image)
     }
     
-   private func getTempFor(_ temp: Double) -> String {
-        return String(format: "%.0f", temp - 273.15)
+    private func getTempFor(_ temp: Double) -> String {
+        return String(format: "%1.0f", temp)
     }
+    
+//   private func getTempFor(_ temp: Double) -> String {
+//        return String(format: "%.0f", temp - 273.15)
+//    }
 }

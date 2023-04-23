@@ -9,7 +9,7 @@ import Foundation
 
 protocol MeteoListRouting {
     func goToAddCity()
-    func goToMeteoDetail()
+    func goToMeteoDetail(model: WeatherProtocol)
 }
 
 class MeteoListRouter: MeteoListRouting {
@@ -24,7 +24,7 @@ class MeteoListRouter: MeteoListRouting {
         viewController?.navigationController?.present(CityListScene.initialization.configure(), animated: true)
     }
     
-    func goToMeteoDetail() {
-        
+    func goToMeteoDetail(model: WeatherProtocol) {
+        viewController?.navigationController?.pushViewController(MeteoDetailScene.initialization(model).configure(), animated: true)
     }
 }

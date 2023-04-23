@@ -15,8 +15,8 @@ class MeteoListInteractor {
     
     private let worker: MeteoListWorkerProtocol
     private let prenseter: MeteoListPresentationLogic
-    private var cityMeteoList: [MeteoCityResponse] = []
-    private var cityNames: [String] = []
+    private var cityMeteoList: [WeatherProtocol] = []
+    private var coordinate: [Coordinate] = []
     
     init(worker: MeteoListWorkerProtocol, prenseter: MeteoListPresentationLogic) {
         self.worker = worker
@@ -28,14 +28,12 @@ class MeteoListInteractor {
             switch result {
             case .success(let city):
                 city.forEach { city in
-                    self.cityNames.append("\(city.name),\(city.countryCode)")
+                    self.coordinate.append(Coordinate(lat: city.lat, lon: city.lng, cityName: city.name))
                 }
-                print(city.count)
-                print(self.cityNames.count)
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    self.cityNames.forEach { name in
-                        self.fetchMeteoCity(cityName: name)
+                    self.coordinate.forEach { coordinate in
+                        self.fetchMeteoCity(lat: coordinate.lat, lon: coordinate.lon, cityName: coordinate.cityName)
                     }
                 }
             case .failure(let error):
@@ -44,15 +42,17 @@ class MeteoListInteractor {
         }
     }
     
-    private func fetchMeteoCity(cityName: String) {
-        self.worker.fetchMeteoCity(q: cityName) { [weak self] result in
+    private func fetchMeteoCity(lat: Double, lon: Double, cityName: String) {
+        worker.fetchWeatherCity(lat: lat, lon: lon) { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let cityMeteo):
-                self.cityMeteoList.append(cityMeteo)
-                self.prenseter.presentFetchMeteoList(response: FetchMeteoCityList.Response.init(model: self.cityMeteoList))
+            case .success(let weather):
+                var weather = weather
+                weather.cityName = cityName
+                self.cityMeteoList.append(weather)
+                self.prenseter.presentFetchMeteoList(response: FetchWeather.Responseee.init(model: self.cityMeteoList))
             case .failure(let error):
-                print("Error here: \(error)")
+                print(error)
             }
         }
     }

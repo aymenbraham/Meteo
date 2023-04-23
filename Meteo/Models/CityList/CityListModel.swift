@@ -17,6 +17,12 @@ struct DisplayedCityList: DisplayedCityListProtocol {
     var model: CityProtocol
 }
 
+struct Coordinate {
+    let lat: Double
+    let lon: Double
+    let cityName: String
+}
+
 enum FetchCityList {
     struct Request {}
 

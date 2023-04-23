@@ -16,5 +16,6 @@ class Constants {
         static let keyAPICity = "97e492a0-47ef-4646-8b17-99ed7dae78b7"
         static let meteoListTableViewCell = "MeteoListTableViewCell"
         static let cityListTableViewCell = "CityListTableViewCell"
+        static let hourlyCollectionViewCell = "HourlyCollectionViewCell"
     }
 }
