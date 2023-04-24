@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 protocol MeteoListBusinessLogic {
     func getCitiesList()
@@ -17,12 +18,13 @@ class MeteoListInteractor {
     private let prenseter: MeteoListPresentationLogic
     private var cityMeteoList: [WeatherProtocol] = []
     private var coordinate: [Coordinate] = []
+    private let locationManager = LocationManager()
     
     init(worker: MeteoListWorkerProtocol, prenseter: MeteoListPresentationLogic) {
         self.worker = worker
         self.prenseter = prenseter
     }
-    
+        
     private func fetchCities() {
         cityMeteoList = []
         coordinate = []
@@ -30,7 +32,7 @@ class MeteoListInteractor {
             switch result {
             case .success(let city):
                 if city.isEmpty {
-                    self.prenseter.presentNoCityAdded()
+                    self.getLocationMeteo()
                     return
                 }
                 city.forEach { city in
@@ -59,6 +61,21 @@ class MeteoListInteractor {
                 self.prenseter.presentFetchMeteoList(response: FetchWeather.Response.init(model: self.cityMeteoList))
             case .failure(let error):
                 print(error)
+            }
+        }
+    }
+    
+    private func getLocationMeteo() {
+        locationManager.requestLocation { location in
+            guard let location = location else { return }
+            let lat = location.coordinate.latitude
+            let lng = location.coordinate.latitude
+            let city = City(name: "My postion", cityCode: "My postion", lat: lat, lng: lng, countryCode: "My postion")
+            self.cityMeteoList = []
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                let _ = self.worker.addCity(model: city)
+                self.fetchMeteoCity(lat: lat, lon: lng, cityName: city.name)
             }
         }
     }

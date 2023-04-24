@@ -24,5 +24,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs your location </string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app needs your location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app needs your location</string>
 </dict>
 </plist>
