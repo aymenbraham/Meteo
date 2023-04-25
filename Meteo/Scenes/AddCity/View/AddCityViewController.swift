@@ -65,12 +65,12 @@ class AddCityViewController: UIViewController {
         tableView.register(UINib(nibName: Constants.Strings.cityListTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.Strings.cityListTableViewCell)
     }
     
-    func startActivityIndicator() {
+    private func startActivityIndicator() {
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
     }
     
-    func stopActivityIndicator() {
+    private func stopActivityIndicator() {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
     }
@@ -113,6 +113,11 @@ extension AddCityViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Strings.cityListTableViewCell, for: indexPath) as! CityListTableViewCell
         cell.config(viewModel: isSearching ? filtredCityList?[indexPath.row] : cityList?[indexPath.row])
+        if indexPath == tableView.indexPathForSelectedRow {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
     }
     

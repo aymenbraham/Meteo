@@ -23,7 +23,8 @@ enum MeteoListScene {
         let presenter = MeteoListPresenter(viewController: viewController, builder: builder)
         let cityApi = WeatherAPI(network: NetworkManager())
         let cityDataStore = CityDataStore(dataStack: CoreDataStack())
-        let worker = MeteoListWorker(weatherApi: cityApi, cityDataStore: cityDataStore)
+        let weatherDataStore = WeatherDataStore(dataStack: CoreDataStack())
+        let worker = MeteoListWorker(weatherApi: cityApi, cityDataStore: cityDataStore, weatherDataStore: weatherDataStore)
         let interactor = MeteoListInteractor(worker: worker, prenseter: presenter)
         let router = MeteoListRouter(viewController: viewController)
         viewController.interactor = interactor

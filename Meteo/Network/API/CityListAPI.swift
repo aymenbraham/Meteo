@@ -9,7 +9,7 @@ import Foundation
 
 protocol CityListApiProtocol {
     typealias CityCompletion = (Result<CityResponse, Error>) -> Void
-    func fetchMeteoCity(name: String, completion: @escaping CityCompletion)
+    func fetchMeteoCity(completion: @escaping CityCompletion)
 }
 
 struct CityListAPI: CityListApiProtocol {
@@ -22,8 +22,8 @@ struct CityListAPI: CityListApiProtocol {
         self.netWork = network
     }
     
-    func fetchMeteoCity(name: String, completion: @escaping CityCompletion) {
-        guard let url = URL(string: "\(baseURL)/cities?name=\(name)&api_key=\(keyApi)") else { return }
+    func fetchMeteoCity(completion: @escaping CityCompletion) {
+        guard let url = URL(string: "\(baseURL)/cities?name=&api_key=\(keyApi)") else { return }
         netWork.request(fromURL: url, httpMethod: .get, completion: completion)
     }
 }

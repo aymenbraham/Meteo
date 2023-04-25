@@ -7,7 +7,35 @@
         <attribute name="lng" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Weather" representedClassName="WeatherDB" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="weatherDescription" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeatherDescription" inverseName="weather" inverseEntity="WeatherDescription"/>
+    </entity>
+    <entity name="WeatherDaily" representedClassName="WeatherDailyDB" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tempMax" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tempMin" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="dailyDescription" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeatherDescription" inverseName="dailyDescription" inverseEntity="WeatherDescription"/>
+    </entity>
+    <entity name="WeatherDescription" representedClassName="WeatherDescriptionDB" syncable="YES">
+        <attribute name="descriptionText" optional="YES" attributeType="String"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="main" optional="YES" attributeType="String"/>
+        <relationship name="dailyDescription" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeatherDaily" inverseName="dailyDescription" inverseEntity="WeatherDaily"/>
+        <relationship name="weather" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weather" inverseName="weatherDescription" inverseEntity="Weather"/>
+    </entity>
+    <entity name="WeatherDetail" representedClassName="WeatherDetailDB" syncable="YES">
+        <attribute name="cityName" optional="YES" attributeType="String"/>
+        <relationship name="current" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weather"/>
+        <relationship name="daily" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeatherDaily"/>
+        <relationship name="hourly" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weather"/>
+    </entity>
     <elements>
-        <element name="City" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="City" positionX="-522.8329467773438" positionY="-153.4727172851562" width="128" height="118"/>
+        <element name="Weather" positionX="-97.356201171875" positionY="64.132080078125" width="128" height="88"/>
+        <element name="WeatherDaily" positionX="-523.5676879882812" positionY="262.1496887207031" width="128" height="103"/>
+        <element name="WeatherDescription" positionX="105.5686645507812" positionY="326.7327880859375" width="128" height="118"/>
+        <element name="WeatherDetail" positionX="-514.2503051757812" positionY="26.11978149414062" width="128" height="103"/>
     </elements>
 </model>

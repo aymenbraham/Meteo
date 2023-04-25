@@ -25,13 +25,15 @@ class AddCityInteractor {
 
 extension AddCityInteractor: CityListBusinessLogic {
     func getCityList() {
-        self.worker.fetchCity(name: "") { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let cityList):
-                self.prenseter.presentFetchCityList(response: FetchCityList.Response.init(model: cityList.response))
-            case .failure(let error):
-                print("Error here: \(error)")
+        if NetworkReachability.isConnectedToNetwork() {
+            self.worker.fetchCity() { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let cityList):
+                    self.prenseter.presentFetchCityList(response: FetchCityList.Response.init(model: cityList.response))
+                case .failure(let error):
+                    print("Error here: \(error)")
+                }
             }
         }
     }

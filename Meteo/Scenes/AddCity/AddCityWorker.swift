@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CityListWorkerProtocol: CityDataSourceProtocol {
-    func fetchCity(name: String, completion: @escaping CityListApiProtocol.CityCompletion)
+    func fetchCity(completion: @escaping CityListApiProtocol.CityCompletion)
 }
 
 struct AddCityWorker {
@@ -24,8 +24,8 @@ struct AddCityWorker {
 
 // - Network
 extension AddCityWorker: CityListWorkerProtocol {
-    func fetchCity(name: String, completion: @escaping CityListApiProtocol.CityCompletion) {
-        self.cityListApi.fetchMeteoCity(name: name, completion: completion)
+    func fetchCity(completion: @escaping CityListApiProtocol.CityCompletion) {
+        self.cityListApi.fetchMeteoCity(completion: completion)
     }
 }
 

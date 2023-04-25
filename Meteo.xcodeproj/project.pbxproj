@@ -36,6 +36,10 @@
 		C326D57329F54C5200C3ABF3 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D57229F54C5200C3ABF3 /* WeatherResponse.swift */; };
 		C326D57529F5518700C3ABF3 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D57429F5518700C3ABF3 /* WeatherModel.swift */; };
 		C326D57829F6A15200C3ABF3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D57729F6A15200C3ABF3 /* LocationManager.swift */; };
+		C326D57A29F6CF8800C3ABF3 /* WeatherDetailDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D57929F6CF8800C3ABF3 /* WeatherDetailDB+CoreDataProperties.swift */; };
+		C326D57C29F6CFA000C3ABF3 /* WeatherDetailDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D57B29F6CFA000C3ABF3 /* WeatherDetailDB+CoreDataClass.swift */; };
+		C326D57E29F7271700C3ABF3 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D57D29F7271700C3ABF3 /* WeatherDataSource.swift */; };
+		C326D58029F7D6EF00C3ABF3 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D57F29F7D6EF00C3ABF3 /* NetworkReachability.swift */; };
 		C3AE3E3D29F28D50005646B9 /* CityListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE3E3B29F28D50005646B9 /* CityListTableViewCell.swift */; };
 		C3AE3E3E29F28D50005646B9 /* CityListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AE3E3C29F28D50005646B9 /* CityListTableViewCell.xib */; };
 		C3AE3E4129F28E1B005646B9 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE3E3F29F28E1B005646B9 /* AddCityViewController.swift */; };
@@ -121,6 +125,10 @@
 		C326D57229F54C5200C3ABF3 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		C326D57429F5518700C3ABF3 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		C326D57729F6A15200C3ABF3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C326D57929F6CF8800C3ABF3 /* WeatherDetailDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDetailDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C326D57B29F6CFA000C3ABF3 /* WeatherDetailDB+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDetailDB+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C326D57D29F7271700C3ABF3 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
+		C326D57F29F7D6EF00C3ABF3 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		C3AE3E3B29F28D50005646B9 /* CityListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTableViewCell.swift; sourceTree = "<group>"; };
 		C3AE3E3C29F28D50005646B9 /* CityListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityListTableViewCell.xib; sourceTree = "<group>"; };
 		C3AE3E3F29F28E1B005646B9 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				C3248A8829F15E5B002D230A /* NetworkManager.swift */,
+				C326D57F29F7D6EF00C3ABF3 /* NetworkReachability.swift */,
 				C3248A8C29F1671F002D230A /* API */,
 			);
 			path = Network;
@@ -421,6 +430,8 @@
 			children = (
 				C3AE3E5929F2DC6F005646B9 /* CityDB+CoreDataProperties.swift */,
 				C3AE3E5B29F2DC93005646B9 /* CityDB+CoreDataClass.swift */,
+				C326D57929F6CF8800C3ABF3 /* WeatherDetailDB+CoreDataProperties.swift */,
+				C326D57B29F6CFA000C3ABF3 /* WeatherDetailDB+CoreDataClass.swift */,
 			);
 			path = ManagedObjects;
 			sourceTree = "<group>";
@@ -429,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				C3AE3E6029F2E068005646B9 /* CityDataStore.swift */,
+				C326D57D29F7271700C3ABF3 /* WeatherDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -628,14 +640,17 @@
 				C3248A8529F141F7002D230A /* MeteoListBuilder.swift in Sources */,
 				C3AE3E5A29F2DC6F005646B9 /* CityDB+CoreDataProperties.swift in Sources */,
 				C3AE3E6129F2E068005646B9 /* CityDataStore.swift in Sources */,
+				C326D58029F7D6EF00C3ABF3 /* NetworkReachability.swift in Sources */,
 				C3248A8129F13F86002D230A /* MeteoListRouter.swift in Sources */,
 				C3AE3E6C29F40D4C005646B9 /* MeteoDetailInteractor.swift in Sources */,
+				C326D57C29F6CFA000C3ABF3 /* WeatherDetailDB+CoreDataClass.swift in Sources */,
 				C326D57329F54C5200C3ABF3 /* WeatherResponse.swift in Sources */,
 				C3AE3E7A29F41FBF005646B9 /* CurrentlyWeatherView.swift in Sources */,
 				C3AE3E5229F2A2AC005646B9 /* CityResponse.swift in Sources */,
 				C3248A9429F1AF01002D230A /* NSAttributedStringExtension.swift in Sources */,
 				C3AE3E6E29F40D5A005646B9 /* MeteoDetailPresenter.swift in Sources */,
 				C306877F29F0761900922FC7 /* ViewController.swift in Sources */,
+				C326D57A29F6CF8800C3ABF3 /* WeatherDetailDB+CoreDataProperties.swift in Sources */,
 				C3AE3E4E29F299C1005646B9 /* CityListBuilder.swift in Sources */,
 				C3AE3E7229F40D7D005646B9 /* MeteoDetailRouter.swift in Sources */,
 				C3248A8929F15E5B002D230A /* NetworkManager.swift in Sources */,
@@ -659,6 +674,7 @@
 				C3AE3E8829F44AF0005646B9 /* UIViewExtension.swift in Sources */,
 				C3AE3E3D29F28D50005646B9 /* CityListTableViewCell.swift in Sources */,
 				C306877D29F0761900922FC7 /* SceneDelegate.swift in Sources */,
+				C326D57E29F7271700C3ABF3 /* WeatherDataSource.swift in Sources */,
 				C326D57529F5518700C3ABF3 /* WeatherModel.swift in Sources */,
 				C3AE3E4429F293A1005646B9 /* AddCityInteractor.swift in Sources */,
 			);

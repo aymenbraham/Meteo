@@ -23,6 +23,12 @@ class CityListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        // Reset the accessory view to none
+        accessoryType = .none
+    }
+    
     func config(viewModel: DisplayedCityListProtocol?) {
         guard let viewModel = viewModel else { return }
         nameLabel.attributedText = viewModel.cityName

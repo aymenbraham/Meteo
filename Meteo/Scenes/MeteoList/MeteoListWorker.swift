@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 
-protocol MeteoListWorkerProtocol: CityDataSourceProtocol {
+protocol MeteoListWorkerProtocol: CityDataSourceProtocol, WeatherDataStoreProtocol {
     func fetchWeatherCity(lat: Double, lon: Double, completion: @escaping WeatherAPIProtocol.WeatherCompletion)
 }
 
@@ -16,10 +16,12 @@ struct MeteoListWorker {
 
     private let weatherApi: WeatherAPIProtocol
     private var cityDataStore: CityDataSourceProtocol
+    private let weatherDataStore: WeatherDataStoreProtocol
     
-    init(weatherApi: WeatherAPIProtocol, cityDataStore: CityDataSourceProtocol) {
+    init(weatherApi: WeatherAPIProtocol, cityDataStore: CityDataSourceProtocol, weatherDataStore: WeatherDataStoreProtocol) {
         self.weatherApi = weatherApi
         self.cityDataStore = cityDataStore
+        self.weatherDataStore = weatherDataStore
     }
 }
 
@@ -30,7 +32,7 @@ extension MeteoListWorker: MeteoListWorkerProtocol {
     }
 }
 
-// - Local
+// - Local CityDataSourceProtocol
 extension MeteoListWorker: CityDataSourceProtocol {
     func addCity(model: CityProtocol) -> CoreStackSaveResult {
         cityDataStore.addCity(model: model)
@@ -42,5 +44,19 @@ extension MeteoListWorker: CityDataSourceProtocol {
     
     func getCityWithCountryCode(cityCode: String) -> CityDB? {
         cityDataStore.getCityWithCountryCode(cityCode: cityCode)
+    }
+}
+
+extension MeteoListWorker: WeatherDataStoreProtocol {
+    func addWeather(model: WeatherProtocol) -> CoreStackSaveResult? {
+        weatherDataStore.addWeather(model: model)
+    }
+    
+    func fetchWeather(completion: @escaping FetchLocalWeatherCompletion) {
+        weatherDataStore.fetchWeather(completion: completion)
+    }
+    
+    func getWeatherWithCityName(cityName: String) -> WeatherDetailDB? {
+        weatherDataStore.getWeatherWithCityName(cityName: cityName)
     }
 }

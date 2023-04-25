@@ -41,7 +41,14 @@ class MeteoListInteractor {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     self.coordinate.forEach { coordinate in
-                        self.fetchMeteoCity(lat: coordinate.lat, lon: coordinate.lon, cityName: coordinate.cityName)
+                        if NetworkReachability.isConnectedToNetwork() {
+                            self.fetchMeteoCity(lat: coordinate.lat, lon: coordinate.lon, cityName: coordinate.cityName)
+                        } else {
+                            guard let weatherDB = self.worker.getWeatherWithCityName(cityName: coordinate.cityName) else { return }
+                            let weather = weatherDB.convertWeatherDBToWeather(model: weatherDB)
+                            self.cityMeteoList.append(weather)
+                            self.prenseter.presentFetchMeteoList(response: FetchWeather.Response.init(model: self.cityMeteoList))
+                        }
                     }
                 }
             case .failure(let error):
@@ -58,6 +65,7 @@ class MeteoListInteractor {
                 var weather = weather
                 weather.cityName = cityName
                 self.cityMeteoList.append(weather)
+                let _ = self.worker.addWeather(model: weather)
                 self.prenseter.presentFetchMeteoList(response: FetchWeather.Response.init(model: self.cityMeteoList))
             case .failure(let error):
                 print(error)
