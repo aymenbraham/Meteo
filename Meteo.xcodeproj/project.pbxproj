@@ -40,6 +40,14 @@
 		C326D57C29F6CFA000C3ABF3 /* WeatherDetailDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D57B29F6CFA000C3ABF3 /* WeatherDetailDB+CoreDataClass.swift */; };
 		C326D57E29F7271700C3ABF3 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D57D29F7271700C3ABF3 /* WeatherDataSource.swift */; };
 		C326D58029F7D6EF00C3ABF3 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D57F29F7D6EF00C3ABF3 /* NetworkReachability.swift */; };
+		C326D58429F91FC100C3ABF3 /* MeteoListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D58329F91FC100C3ABF3 /* MeteoListPresenterMock.swift */; };
+		C326D58629F91FD500C3ABF3 /* MeteoListWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D58529F91FD500C3ABF3 /* MeteoListWorkerMock.swift */; };
+		C326D58829F9201000C3ABF3 /* MeteoListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D58729F9201000C3ABF3 /* MeteoListInteractorTests.swift */; };
+		C326D58D29F9597F00C3ABF3 /* MeteoDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D58C29F9597F00C3ABF3 /* MeteoDetailInteractorTests.swift */; };
+		C326D58F29F959ED00C3ABF3 /* MeteoDetailPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D58E29F959ED00C3ABF3 /* MeteoDetailPresenterMock.swift */; };
+		C326D59229F95F1F00C3ABF3 /* AddCityInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D59129F95F1F00C3ABF3 /* AddCityInteractorTests.swift */; };
+		C326D59429F970FF00C3ABF3 /* AddCityPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D59329F970FF00C3ABF3 /* AddCityPresenterMock.swift */; };
+		C326D59629F9710F00C3ABF3 /* AddCityWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D59529F9710F00C3ABF3 /* AddCityWorkerMock.swift */; };
 		C3AE3E3D29F28D50005646B9 /* CityListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE3E3B29F28D50005646B9 /* CityListTableViewCell.swift */; };
 		C3AE3E3E29F28D50005646B9 /* CityListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AE3E3C29F28D50005646B9 /* CityListTableViewCell.xib */; };
 		C3AE3E4129F28E1B005646B9 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE3E3F29F28E1B005646B9 /* AddCityViewController.swift */; };
@@ -129,6 +137,14 @@
 		C326D57B29F6CFA000C3ABF3 /* WeatherDetailDB+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDetailDB+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C326D57D29F7271700C3ABF3 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
 		C326D57F29F7D6EF00C3ABF3 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		C326D58329F91FC100C3ABF3 /* MeteoListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListPresenterMock.swift; sourceTree = "<group>"; };
+		C326D58529F91FD500C3ABF3 /* MeteoListWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListWorkerMock.swift; sourceTree = "<group>"; };
+		C326D58729F9201000C3ABF3 /* MeteoListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoListInteractorTests.swift; sourceTree = "<group>"; };
+		C326D58C29F9597F00C3ABF3 /* MeteoDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoDetailInteractorTests.swift; sourceTree = "<group>"; };
+		C326D58E29F959ED00C3ABF3 /* MeteoDetailPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoDetailPresenterMock.swift; sourceTree = "<group>"; };
+		C326D59129F95F1F00C3ABF3 /* AddCityInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityInteractorTests.swift; sourceTree = "<group>"; };
+		C326D59329F970FF00C3ABF3 /* AddCityPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityPresenterMock.swift; sourceTree = "<group>"; };
+		C326D59529F9710F00C3ABF3 /* AddCityWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityWorkerMock.swift; sourceTree = "<group>"; };
 		C3AE3E3B29F28D50005646B9 /* CityListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTableViewCell.swift; sourceTree = "<group>"; };
 		C3AE3E3C29F28D50005646B9 /* CityListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityListTableViewCell.xib; sourceTree = "<group>"; };
 		C3AE3E3F29F28E1B005646B9 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +247,10 @@
 		C306879329F0761B00922FC7 /* MeteoTests */ = {
 			isa = PBXGroup;
 			children = (
+				C326D58129F91E0A00C3ABF3 /* Mock */,
+				C326D58229F91E1900C3ABF3 /* MeteoListTests */,
+				C326D58B29F9594600C3ABF3 /* MetoDetail */,
+				C326D59029F95EEF00C3ABF3 /* AddCity */,
 				C306879429F0761B00922FC7 /* MeteoTests.swift */,
 			);
 			path = MeteoTests;
@@ -373,6 +393,42 @@
 				C326D57729F6A15200C3ABF3 /* LocationManager.swift */,
 			);
 			path = LocationManger;
+			sourceTree = "<group>";
+		};
+		C326D58129F91E0A00C3ABF3 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				C326D58329F91FC100C3ABF3 /* MeteoListPresenterMock.swift */,
+				C326D58529F91FD500C3ABF3 /* MeteoListWorkerMock.swift */,
+				C326D58E29F959ED00C3ABF3 /* MeteoDetailPresenterMock.swift */,
+				C326D59329F970FF00C3ABF3 /* AddCityPresenterMock.swift */,
+				C326D59529F9710F00C3ABF3 /* AddCityWorkerMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		C326D58229F91E1900C3ABF3 /* MeteoListTests */ = {
+			isa = PBXGroup;
+			children = (
+				C326D58729F9201000C3ABF3 /* MeteoListInteractorTests.swift */,
+			);
+			path = MeteoListTests;
+			sourceTree = "<group>";
+		};
+		C326D58B29F9594600C3ABF3 /* MetoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C326D58C29F9597F00C3ABF3 /* MeteoDetailInteractorTests.swift */,
+			);
+			path = MetoDetail;
+			sourceTree = "<group>";
+		};
+		C326D59029F95EEF00C3ABF3 /* AddCity */ = {
+			isa = PBXGroup;
+			children = (
+				C326D59129F95F1F00C3ABF3 /* AddCityInteractorTests.swift */,
+			);
+			path = AddCity;
 			sourceTree = "<group>";
 		};
 		C3AE3E3829F28CA2005646B9 /* AddCity */ = {
@@ -684,7 +740,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C326D59429F970FF00C3ABF3 /* AddCityPresenterMock.swift in Sources */,
+				C326D58629F91FD500C3ABF3 /* MeteoListWorkerMock.swift in Sources */,
+				C326D58829F9201000C3ABF3 /* MeteoListInteractorTests.swift in Sources */,
+				C326D59629F9710F00C3ABF3 /* AddCityWorkerMock.swift in Sources */,
 				C306879529F0761B00922FC7 /* MeteoTests.swift in Sources */,
+				C326D58D29F9597F00C3ABF3 /* MeteoDetailInteractorTests.swift in Sources */,
+				C326D58F29F959ED00C3ABF3 /* MeteoDetailPresenterMock.swift in Sources */,
+				C326D58429F91FC100C3ABF3 /* MeteoListPresenterMock.swift in Sources */,
+				C326D59229F95F1F00C3ABF3 /* AddCityInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,7 +847,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -838,7 +902,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -915,7 +979,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A6X4F2L4XF;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aymenbraham.MeteoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -935,7 +999,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A6X4F2L4XF;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aymenbraham.MeteoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

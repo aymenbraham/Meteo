@@ -9,7 +9,6 @@ import UIKit
 
 protocol MeteoListDisplayLogic: AnyObject {
     func displayMeteoCityList(viewModel: FetchMeteoCityList.ViewModel)
-    func displayPopUpAddCity()
 }
 
 class MeteoListViewController: UIViewController {
@@ -109,9 +108,5 @@ extension MeteoListViewController: MeteoListDisplayLogic {
         meteoCityList = viewModel.displayedMeteoCityList
         stopActivityIndicator()
         tableView.reloadData()
-    }
-    
-    func displayPopUpAddCity() {
-        stopActivityIndicator()
     }
 }
