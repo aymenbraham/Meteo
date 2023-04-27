@@ -1,5 +1,7 @@
 # Meteo
-Welcome to the Meteo APP
+Welcome to the Meteo APP: Swift, CleanSwift, CoreData, CoreLocation, XCTest
+
+You can use the App on mode offline 
 
 PS: If you are testing the app on the simulator pls make sure to enable **Allow Location Simulation **  and **add a default location **
 
