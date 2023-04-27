@@ -11,8 +11,15 @@ import Foundation
 class AddCityPresenterMock: CityListPresentationLogic {
     
     var presentFetchCityListResponse: FetchCityList.Response?
+    var presentFetchCityError: ModelError?
+    var shouldPresntError: Bool?
     
     func presentFetchCityList(response: FetchCityList.Response) {
         presentFetchCityListResponse = response
+    }
+    
+    func presentError(error: ModelError) {
+        presentFetchCityError = error
+        shouldPresntError = true
     }
 }

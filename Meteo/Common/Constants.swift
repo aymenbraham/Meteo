@@ -18,6 +18,10 @@ class Constants {
         static let cityListTableViewCell = "CityListTableViewCell"
         static let hourlyCollectionViewCell = "HourlyCollectionViewCell"
         static let dataNeedsRefresh = Notification.Name("dataNeedsRefresh")
+        static let errorAPITitle = "Error API"
+        static let errorAPIMessage = "Failed to fetch data from server. Please check your internet connection and try again"
+        static let connectionErrorTitle = "Connection Error"
+        static let connectionErrorMessage = "Unable to establish a connection. Please check your internet connection and try again."
     }
     
     class Colors {

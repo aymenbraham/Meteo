@@ -71,8 +71,4 @@ struct MeteoListBuilder: MeteoListBuilderProtocol {
     private func getTempFor(_ temp: Double) -> String {
         return String(format: "%1.0f", temp)
     }
-    
-//   private func getTempFor(_ temp: Double) -> String {
-//        return String(format: "%.0f", temp - 273.15)
-//    }
 }

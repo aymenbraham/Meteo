@@ -51,9 +51,7 @@ struct WeatherDaily: Codable {
     init() {
         date = 0
         temperature = Temperature(min: 0.0, max: 0.0)
-        weather = [WeatherDetail(main: "",
-                                 description: "",
-                                 icon: "")]
+        weather = []
     }
 }
 

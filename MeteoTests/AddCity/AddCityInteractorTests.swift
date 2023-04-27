@@ -41,6 +41,16 @@ class AddCityInteractorTests: XCTestCase {
         XCTAssertEqual(mockPresenter.presentFetchCityListResponse?.model.first?.cityCode, "1234")
         XCTAssertEqual(mockPresenter.presentFetchCityListResponse?.model.first?.countryCode, "FR")
     }
+    
+    func testGetCityListError() {
+        let expectedError = ModelError(title: Constants.Strings.errorAPITitle, message: Constants.Strings.errorAPIMessage)
+        mockWorker.expectationForFetchWeatherCity = .failure(expectedError)
+        mockPresenter.presentError(error: expectedError)
+        interactor.getCityList()
+        XCTAssertEqual(mockPresenter.shouldPresntError, true)
+        XCTAssertEqual(mockPresenter.presentFetchCityError?.message, expectedError.message)
+        XCTAssertEqual(mockPresenter.presentFetchCityError?.title, expectedError.title)
+    }
 }
 
 extension AddCityInteractorTests {

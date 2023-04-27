@@ -9,6 +9,7 @@ import UIKit
 
 protocol AddCitytDisplayLogic: AnyObject {
     func displayCityList(viewModel: FetchCityList.ViewModel)
+    func displayError(error: ModelError)
 }
 
 class AddCityViewController: UIViewController {
@@ -158,5 +159,25 @@ extension AddCityViewController: AddCitytDisplayLogic {
         stopActivityIndicator()
         cityList = viewModel.displayedCityList
         tableView.reloadData()
+    }
+    
+    func displayError(error: ModelError) {
+        stopActivityIndicator()
+        let alertController = UIAlertController(title: error.title, message: error.message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { action in }
+        alertController.addAction(okAction)
+        DispatchQueue.main.async {
+            self.topMostController()?.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func topMostController() -> UIViewController? {
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            return topController
+        }
+        return nil
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 protocol CityListPresentationLogic {
     func presentFetchCityList(response: FetchCityList.Response)
+    func presentError(error: ModelError)
 }
 
 class AddCityPresenter: CityListPresentationLogic {
@@ -24,6 +25,10 @@ class AddCityPresenter: CityListPresentationLogic {
     func presentFetchCityList(response: FetchCityList.Response) {
         let displayedCityList = builder.buildCityList(model: response.model)
         viewController?.displayCityList(viewModel: .init(displayedCityList: displayedCityList))
+    }
+    
+    func presentError(error: ModelError) {
+        viewController?.displayError(error: error)
     }
     
 }

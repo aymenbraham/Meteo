@@ -31,9 +31,7 @@ struct DisplayedMeteoCityList: DisplayedMeteoCityListProtocol {
 enum FetchMeteoCityList {
     struct Request {}
 
-    struct Response {
-        let model: [MeteoCityProtocol]
-    }
+    struct Response {}
 
     struct ViewModel {
         let displayedMeteoCityList: [DisplayedMeteoCityListProtocol]

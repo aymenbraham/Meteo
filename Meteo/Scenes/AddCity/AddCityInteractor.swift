@@ -31,10 +31,16 @@ extension AddCityInteractor: CityListBusinessLogic {
                 switch result {
                 case .success(let cityList):
                     self.prenseter.presentFetchCityList(response: FetchCityList.Response.init(model: cityList.response))
-                case .failure(let error):
-                    print("Error here: \(error)")
+                case .failure:
+                    let error = ModelError(title: Constants.Strings.errorAPITitle,
+                                           message: Constants.Strings.errorAPIMessage)
+                    self.prenseter.presentError(error: error)
                 }
             }
+        } else {
+            let error = ModelError(title: Constants.Strings.connectionErrorTitle,
+                                   message: Constants.Strings.connectionErrorMessage)
+            self.prenseter.presentError(error: error)
         }
     }
     

@@ -78,7 +78,7 @@ class MeteoListInteractor {
             guard let location = location else { return }
             let lat = location.coordinate.latitude
             let lng = location.coordinate.latitude
-            let city = City(name: "My postion", cityCode: "My postion", lat: lat, lng: lng, countryCode: "My postion")
+            let city = City(name: "My position", cityCode: "My position", lat: lat, lng: lng, countryCode: "My position")
             self.cityMeteoList = []
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
