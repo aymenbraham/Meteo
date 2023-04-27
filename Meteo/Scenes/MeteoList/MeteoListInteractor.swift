@@ -74,7 +74,11 @@ class MeteoListInteractor {
     }
     
     private func getLocationMeteo() {
-        locationManager.requestLocation { location in
+        locationManager.requestLocation { location, error in
+            if let _ = error {
+                self.prenseter.presentError(error: ModelError(title: Constants.Strings.positionErrorTitle, message:  Constants.Strings.positionErrorMessage))
+                return
+            }
             guard let location = location else { return }
             let lat = location.coordinate.latitude
             let lng = location.coordinate.latitude

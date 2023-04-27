@@ -12,14 +12,14 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private let locationManager = CLLocationManager()
     private var locationPermissionGranted = false
-    private var completion: ((CLLocation?) -> Void)?
+    private var completion: ((CLLocation?, Error?) -> Void)?
     
     override init() {
         super.init()
         locationManager.delegate = self
     }
     
-    func requestLocation(completion: @escaping (CLLocation?) -> Void) {
+    func requestLocation(completion: @escaping (CLLocation?, Error?) -> Void) {
         self.completion = completion
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
@@ -29,12 +29,12 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
                 locationPermissionGranted = true
                 locationManager.requestLocation()
             case .denied, .restricted:
-                completion(nil)
+                completion(nil, nil)
             @unknown default:
                 break
             }
         } else {
-            completion(nil)
+            completion(nil, nil)
         }
     }
     
@@ -44,9 +44,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             locationPermissionGranted = true
             locationManager.requestLocation()
         case .denied, .restricted:
-            completion?(nil)
+            completion?(nil, nil)
         case .notDetermined:
-            break
+            completion?(nil, nil)
         @unknown default:
             break
         }
@@ -54,12 +54,12 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last, locationPermissionGranted {
-            completion?(location)
+            completion?(location, nil)
             locationManager.stopUpdatingLocation()
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        completion?(nil)
+        completion?(nil, error)
     }
 }

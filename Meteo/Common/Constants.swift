@@ -22,6 +22,8 @@ class Constants {
         static let errorAPIMessage = "Failed to fetch data from server. Please check your internet connection and try again"
         static let connectionErrorTitle = "Connection Error"
         static let connectionErrorMessage = "Unable to establish a connection. Please check your internet connection and try again."
+        static let positionErrorTitle = "Position Error"
+        static let positionErrorMessage = "Unable to get your Position. Please check your internet connection, kill the App and try again."
     }
     
     class Colors {

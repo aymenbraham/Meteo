@@ -9,6 +9,7 @@ import Foundation
 
 protocol MeteoListPresentationLogic {
     func presentFetchMeteoList(response: FetchWeather.Response)
+    func presentError(error: ModelError)
 }
 
 class MeteoListPresenter: MeteoListPresentationLogic {
@@ -24,5 +25,9 @@ class MeteoListPresenter: MeteoListPresentationLogic {
     func presentFetchMeteoList(response: FetchWeather.Response) {
         let displayedMeteoCityList = builder.buildMeteoCityList(model: response.model)
         viewController?.displayMeteoCityList(viewModel: .init(displayedMeteoCityList: displayedMeteoCityList))
+    }
+    
+    func presentError(error: ModelError) {
+        viewController?.displayError(error: error)
     }
 }

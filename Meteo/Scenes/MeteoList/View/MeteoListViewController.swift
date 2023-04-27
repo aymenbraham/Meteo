@@ -9,6 +9,7 @@ import UIKit
 
 protocol MeteoListDisplayLogic: AnyObject {
     func displayMeteoCityList(viewModel: FetchMeteoCityList.ViewModel)
+    func displayError(error: ModelError)
 }
 
 class MeteoListViewController: UIViewController {
@@ -108,5 +109,13 @@ extension MeteoListViewController: MeteoListDisplayLogic {
         meteoCityList = viewModel.displayedMeteoCityList
         stopActivityIndicator()
         tableView.reloadData()
+    }
+    
+    func displayError(error: ModelError) {
+        stopActivityIndicator()
+        let alertController = UIAlertController(title: error.title, message: error.message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { action in }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: false)
     }
 }

@@ -11,8 +11,15 @@ import Foundation
 class MeteoListPresenterMock: MeteoListPresentationLogic {
     
     var presentFetchMeteoListResponse: FetchWeather.Response?
+    var presentFetchCityError: ModelError?
+    var shouldPresntError: Bool?
     
     func presentFetchMeteoList(response: FetchWeather.Response) {
         presentFetchMeteoListResponse = response
+    }
+    
+    func presentError(error: ModelError) {
+        presentFetchCityError = error
+        shouldPresntError = true
     }
 }
